@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -15,12 +15,22 @@ export class HeaderComponent {
 
   constructor(private router: Router) {}
 
-  toggleDropdown(): void {
+  toggleDropdown(event: Event): void {
+    event.preventDefault();
+    event.stopPropagation();
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
   closeDropdown(): void {
     this.isDropdownOpen = false;
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event): void {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.dropdown')) {
+      this.closeDropdown();
+    }
   }
 
   onLogout(event: Event): void {
