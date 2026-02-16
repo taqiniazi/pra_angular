@@ -1,0 +1,21 @@
+<aside class="left-bar d-flex flex-column overflow-hidden" id="sidebar">
+  <a class="sidebar-logo text-center p-2">
+    <button id="close-btn" class="close-btn" (click)="closeSidebar()">&times;</button>
+    <img
+      src="assets/images/logo-login.png"
+      class="img-fluid mb-2 logo-img"
+      width="200"
+      alt="Logo"
+    />
+  </a>
+
+  <div class="flex-grow-1 overflow-auto mt-5">
+    <ul class="sidebar-nav list-unstyled pt-2">
+      @for (item of navItems; track $index) {
+        <li class="sidebar-item">
+          <a [href]="item.link" [class.active]="item.active" class="sidebar-link">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </div>
+</aside>

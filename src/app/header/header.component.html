@@ -1,0 +1,59 @@
+<header>
+  <nav class="navbar navbar-expand">
+    <div class="container-fluid ps-4">
+      <button class="back-outer d-lg-none d-flex">
+        <a
+          id="toggle-btn"
+          class="btn btn-light back-outer d-lg-none d-flex me-2"
+          (click)="toggleSidebarEvent.emit()"
+        >
+          <i class="fa-solid fa-angle-left"></i>
+        </a>
+      </button>
+      <img
+        src="assets/images/logo-login.png"
+        class="img-fluid logo-img peef-logo d-lg-none d-flex mx-3"
+        width="100"
+        alt="Logo"
+      />
+
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center gap-2 p-3 avatar-bg"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <div class="avatar-border">
+              <img
+                src="assets/images/avatar.png"
+                alt="avatar"
+                class="avatar rounded-circle"
+                width="40"
+                height="40"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="text-start d-none d-sm-block lh-sm mx-2">
+              <div class="fw-bold">Kaleem Imtiaz</div>
+              <small class="text-muted">UI/UX Designer</small>
+            </div>
+          </a>
+
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+            <li><a class="dropdown-item" href="#">My profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#" (click)="onLogout($event)">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

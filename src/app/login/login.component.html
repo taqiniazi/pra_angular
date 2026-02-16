@@ -1,0 +1,123 @@
+<div class="container-fluid p-0 login-page-wrapper">
+  <div class="login-wrapper">
+    <!-- Left Side -->
+    <div class="login-left">
+      <div class="content">
+        <h5 class="fw-bold mt-4">Welcome to the</h5>
+        <h5>Official Employee Access Portal of PRA</h5>
+        <p>
+          Please sign in using your official credentials to securely access
+          internal systems and services of the PRA.
+        </p>
+      </div>
+      <div class="login-left-bottom">
+        <img src="assets/images/login-left.png" alt="" />
+      </div>
+    </div>
+    <!-- Right Side -->
+    <div class="login-right">
+      <div class="card border-0 login-card custom-card m-auto">
+        <div class="text-center login-head">
+          <img
+            src="assets/images/logo-login.png"
+            width="150"
+            class="mb-1"
+            alt=""
+          />
+          <h5 class="mt-3 mb-1 text-center fw-bold">
+            <span class="">Login</span> to Access Portal
+          </h5>
+          <p class="text-center mb-5">
+            Please login using your official employee credentials.
+          </p>
+        </div>
+        <form (ngSubmit)="onLogin()">
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <div class="form-group position-relative">
+                <input
+                  type="email"
+                  class="form-control custom-input"
+                  placeholder="Email"
+                  [(ngModel)]="email"
+                  name="email"
+                  required
+                />
+                <i class="fa-regular fa-envelope input-icon"></i>
+              </div>
+            </div>
+            <!-- PASSWORD INPUT -->
+            <div class="col-md-12 mb-3">
+              <div class="form-group position-relative">
+                <input
+                  type="password"
+                  class="form-control custom-input"
+                  placeholder="Password"
+                  [(ngModel)]="password"
+                  name="password"
+                  required
+                />
+                <i class="fa-solid fa-lock input-icon"></i>
+              </div>
+            </div>
+            <div class="col-12 mb-3">
+              <div class="row g-2 align-items-center captcha-container">
+                <!-- Input -->
+                <div class="col-12 col-md-6">
+                  <input
+                    type="text"
+                    class="form-control captcha-input"
+                    placeholder="Enter Captcha"
+                    [(ngModel)]="captcha"
+                    name="captcha"
+                    required
+                  />
+                </div>
+
+                <!-- Captcha -->
+                <div class="col-12 col-md-6">
+                  <div
+                    class="captcha-box d-flex align-items-center justify-content-between px-3"
+                  >
+                    <span>{{ captchaCode }}</span>
+                    <i class="fa-solid fa-rotate-right refresh-icon" (click)="refreshCaptcha()"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <div
+              class="form-group form-filter d-flex flex-column justify-content-center align-items-center text-center mb-3"
+            >
+              <button
+                type="submit"
+                class="btn btn-primary btn-yellow fw-bold text-light w-100 me-1"
+              >Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="login-footer text-white mb-0 my-3">
+    <div
+      class="container d-flex flex-md-row justify-content-center align-items-center my-3"
+    >
+      <!-- Left Logo -->
+      <div
+        class="mb-2 mb-md-0 d-flex justify-content-center align-items-center"
+      >
+        <img
+          src="assets/images/pitb logo.png"
+          class="me-1"
+          alt="Logo 1"
+          height="40"
+        />
+        <div class="text-center text-muted small my-2">
+          &copy; 2017 PRA Appeals. All rights reserved | Powered by PITB
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
