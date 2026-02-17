@@ -36,7 +36,6 @@ export class HeaderComponent {
   onLogout(event: Event): void {
     event.preventDefault();
     this.closeDropdown();
-    // Navigate to login page
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }

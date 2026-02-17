@@ -19,9 +19,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin(): void {
-    // For demo purposes, just navigate to the operation form
-    // In a real app, you would validate credentials here
-    this.router.navigate(['/app/operation-form']);
+    this.router.navigate(['/operation-form']);
   }
 
   refreshCaptcha(): void {

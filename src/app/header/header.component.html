@@ -21,7 +21,7 @@
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle d-flex align-items-center gap-2 p-3 avatar-bg"
-            href="#"
+            href=""
             id="navbarDropdownMenuLink"
             role="button"
             (click)="toggleDropdown($event)"
@@ -49,9 +49,9 @@
             [class.show]="isDropdownOpen"
             aria-labelledby="navbarDropdownMenuLink"
           >
-            <li><a class="dropdown-item" href="#">My profile</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#" (click)="onLogout($event)">Logout</a></li>
+            <li><a class="dropdown-item" href="" (click)="$event.preventDefault()">My profile</a></li>
+            <li><a class="dropdown-item" href="" (click)="$event.preventDefault()">Settings</a></li>
+            <li><a class="dropdown-item" href="" (click)="onLogout($event)">Logout</a></li>
           </ul>
         </li>
       </ul>

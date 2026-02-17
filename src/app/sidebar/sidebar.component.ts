@@ -1,31 +1,27 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-export interface NavItem {
-  label: string;
-  link: string;
-  active?: boolean;
-}
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  @Input() open = false;
   @Output() closeSidebarEvent = new EventEmitter<void>();
 
-  navItems: NavItem[] = [
-    { label: 'Home', link: '#', active: true },
-    { label: 'User Guide', link: '#' },
-    { label: 'Collection', link: '#' },
-    { label: 'Downloads', link: '#' },
-    { label: 'News', link: '#' },
-    { label: 'Contact us', link: '#' },
-    { label: 'Complaints/Facilitations', link: '#' },
-    { label: 'Appeals', link: '#' }
+  navItems= [
+    { label: 'Home', link: '/operation-form', exact: true },
+    { label: 'User Guide', link: '/user-guide', exact: true },
+    { label: 'Collection', link: '#', exact: false },
+    { label: 'Downloads', link: '#', exact: false },
+    { label: 'News', link: '#', exact: false },
+    { label: 'Contact us', link: '#', exact: false },
+    { label: 'Complaints/Facilitations', link: '#', exact: false },
+    { label: 'Appeals', link: '#', exact: false }
   ];
 
   closeSidebar(): void {

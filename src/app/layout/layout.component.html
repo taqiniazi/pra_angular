@@ -1,8 +1,14 @@
 <div class="wrapper1">
-  <!-- Sidebar Component -->
-  <app-sidebar (closeSidebarEvent)="closeSidebar()"></app-sidebar>
+  <app-sidebar
+    [open]="isSidebarOpen"
+    (closeSidebarEvent)="closeSidebar()"
+  ></app-sidebar>
 
-  <div id="overlay" (click)="closeSidebar()"></div>
+  <div
+    id="overlay"
+    [class.active]="isSidebarOpen"
+    (click)="closeSidebar()"
+  ></div>
 
   <!-- Main Content -->
   <div class="main-content">
