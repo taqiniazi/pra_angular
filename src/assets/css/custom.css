@@ -1645,3 +1645,8 @@ label.filter-label {
     print-color-adjust: exact;
   }
 }
+@media screen and (max-width:768px) {
+    .logo-img.peef-logo {
+        width: 160px !important;
+    }
+}

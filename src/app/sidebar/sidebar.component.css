@@ -1,0 +1,10 @@
+.left-bar.show .close-btn {
+    display: block;
+    background: #000;
+    width: 35px;
+    color: #fff;
+    border-radius: 6px;
+    /* height: 40px; */
+    line-height: 1.25;
+    margin-top: -30px;
+}
