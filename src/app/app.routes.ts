@@ -10,10 +10,31 @@ export const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./dashboard/dashboard.component').then(
+            m => m.DashboardComponent
+          )
+      },
+      {
         path: 'operation-form',
         loadComponent: () =>
           import('./operation-form/operation-form.component').then(
             m => m.OperationFormComponent
+          )
+      },
+       {
+        path: 'performance-listing',
+        loadComponent: () =>
+          import('./performance-listing/performance-listing.component').then(
+            m => m.PerformanceListingComponent
+          )
+      },
+       {
+        path: 'search-user',
+        loadComponent: () =>
+          import('./search-user/search-user.component').then(
+            m => m.SearchUserComponent  
           )
       },
       {
@@ -23,7 +44,7 @@ export const routes: Routes = [
             m => m.UserGuideComponent
           )
       },
-      { path: '', redirectTo: 'operation-form', pathMatch: 'full' }
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
   { path: '**', redirectTo: 'login' }

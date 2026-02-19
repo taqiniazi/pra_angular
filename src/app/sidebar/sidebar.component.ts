@@ -14,11 +14,11 @@ export class SidebarComponent {
   @Output() closeSidebarEvent = new EventEmitter<void>();
 
   navItems= [
-    { label: 'Home', link: '/operation-form', exact: true },
-    { label: 'User Guide', link: '/user-guide', exact: true },
-    { label: 'Collection', link: '#', exact: false },
-    { label: 'Downloads', link: '#', exact: false },
-    { label: 'News', link: '#', exact: false },
+    { label: 'Home', link: '/dashboard', exact: true },
+    { label: 'Operation Form', link: '/operation-form', exact: true },
+    { label: 'Performance Listing', link: '/performance-listing', exact: false },
+    { label: 'Search User', link: '/search-user', exact: false },
+    { label: 'User Guide', link: '/user-guide', exact: false },
     { label: 'Contact us', link: '#', exact: false },
     { label: 'Complaints/Facilitations', link: '#', exact: false },
     { label: 'Appeals', link: '#', exact: false }

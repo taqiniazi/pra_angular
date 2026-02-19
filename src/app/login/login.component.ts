@@ -19,7 +19,7 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   onLogin(): void {
-    this.router.navigate(['/operation-form']);
+    this.router.navigate(['/dashboard']);
   }
 
   refreshCaptcha(): void {

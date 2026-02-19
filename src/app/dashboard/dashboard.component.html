@@ -1,0 +1,264 @@
+<h2 class="page-title">Dashboard</h2>
+
+<div class="form-card">
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <div class="section-title">Overview</div>
+    <div>
+      <input
+        type="date"
+        class="form-control filter-control"
+        placeholder="select date"
+      />
+    </div>
+  </div>
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="months-btn btn-group-sm">
+      <button class="btn btn-outline-secondary">1 month</button>
+      <button class="btn btn-outline-secondary">3 months</button>
+      <button class="btn btn-outline-secondary">6 months</button>
+    </div>
+  </div>
+  <div class="mb-1text-blue">Total Amount</div>
+  <h6 class="fw-bold fs-4 mb-3">PKR 780,000,000</h6>
+  <div id="overviewChart" class="chart-box"></div>
+</div>
+
+<div class="row g-2">
+  <div class="col-md-6">
+    <div class="form-card">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Range</div>
+        <div>
+          <input
+            type="date"
+            class="form-control filter-control"
+            placeholder="select date"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="date-col mb-0">Date: <b>1/1/26</b></div>
+      </div>
+
+      <div id="rangeChart" class="chart-box"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-card">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Range</div>
+        <div class="d-flex gap-2">
+          <input type="date" class="form-control filter-control" />
+          <select class="form-select filter-select">
+            <option disabled selected>
+              -- Select Commissionerate --
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center mb-3">
+        <div class="date-col">Date: <b>1/1/26</b></div>
+        <div class="date-col">District: <b> Lahore</b></div>
+      </div>
+
+      <div id="districtChart" class="chart-box"></div>
+    </div>
+  </div>
+</div>
+
+<div class="form-card">
+  <div class="section-title">Overview Stats</div>
+
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="form-card">
+        <div class="section-title">Registration Status</div>
+        <div class="row g-2">
+            @for (item of registration_status; track $index) {
+            <div class="col-md-6">
+                <div class="card stat-card border-0 {{item.class}} h-100 p-3 d-flex flex-column align-items-center justify-content-center"
+                >
+                <img
+                    src="{{item.icon}}"
+                    alt="icon"
+                    width="40"
+                />
+                <p class="stat-label m-2">{{item.label}}</p>
+                <h3 class="stat-number fs-4 fw-bold m-0">{{item.statsNo}}</h3>
+                </div>
+            </div>
+            }
+          
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="form-card">
+        <div class="section-title">
+          Enforcement &amp; Compliance Violations
+        </div>
+        <div class="row g-2">
+          @for (item of enforcement_voaliations; track $index) {
+          <div class="col-md-4">
+            <div class="card stat-card border-0 {{item.class}} h-100 p-3 d-flex flex-column align-items-center justify-content-center"
+            >
+              <img
+                src="{{item.icon}}"
+                alt="icon"
+                width="40"
+              />
+              <p class="stat-label m-2">{{item.label}}</p>
+              <h3 class="stat-number fs-4 fw-bold m-0">{{item.statsNo}}</h3>
+            </div>
+          </div>
+        }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="section-title">Assessment, Penalty &amp; Recovery</div>
+    <div class="row g-2">
+      @for (item of assesment_recovery; track $index) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg">
+            <div
+            class="card stat-card border-0 {{item.class}} h-100 p-3 d-flex flex-column align-items-center justify-content-center"
+            >
+            <img
+                src="{{item.icon}}"
+                alt="icon"
+                width="40"
+            />
+            <p class="stat-label m-2">{{item.label}}</p>
+            <h3 class="stat-number fs-4 fw-bold m-0">{{item.statsNo}}</h3>
+            </div>
+        </div>
+        }
+     
+    </div>
+  </div>
+
+  <div class="form-card">
+    <div class="section-title">Registration Status</div>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <div></div>
+      <div class="d-flex gap-2">
+        <input type="date" class="form-control filter-control" />
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center mb-3">
+      <div class="date-col">Date: <b>1/1/26</b></div>
+    </div>
+
+    <div id="registrationChart" class="chart-box"></div>
+  </div>
+</div>
+
+<div class="row g-2 mb-2">
+  <div class="col-md-6">
+    <div class="form-card h-100">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Enforcement & Compliance Violations</div>
+        <div class="d-flex">
+          <select class="form-select filter-select">
+            <option disabled selected>Select sector</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center mb-3">
+        <div class="date-col">sector: <b>logistic</b></div>
+      </div>
+
+      <div id="donutChart1" class="chart-box"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-card h-100">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Assessment & Penalty</div>
+        <div class="d-flex">
+          <select class="form-select filter-select">
+            <option disabled selected>Select sector</option>
+          </select>
+          <select class="form-select filter-select">
+            <option disabled selected>Select district</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center mb-3">
+        <div class="date-col">sector: <b>logistic</b></div>
+        <div class="date-col">district: <b>Lahore</b></div>
+      </div>
+
+      <div id="donutChart2" class="chart-box"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-2">
+  <div class="col-md-6">
+    <div class="form-card">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Default Surcharge</div>
+      </div>
+      <div
+        class="card stat-card border-0 h-100 p-3 d-flex flex-column align-items-center justify-content-center"
+      >
+        <img src="./assets/images/icon11.png" alt="icon" width="50" />
+        <p class="stat-label mt-3 mb-0">Total Default Surcharge (PKR)</p>
+        <h3 class="stat-number fs-4 fw-bold m-0">PKR 185,400,000</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-card">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Actual Amount Recovery</div>
+      </div>
+      <div
+        class="card stat-card border-0 h-100 p-3 d-flex flex-column align-items-center justify-content-center"
+      >
+        <img src="./assets/images/icon12.png" alt="icon" width="50" />
+        <p class="stat-label mt-3 mb-0">Total Default Surcharge (PKR)</p>
+        <h3 class="stat-number fs-4 fw-bold m-0">PKR 642,300,000</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-2">
+  <div class="col-md-6">
+    <div class="form-card h-100">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">e-IMS Installation Status</div>
+      </div>
+
+      <div id="imsStatus" class="chart-box"></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-card h-100">
+      <div class="d-flex justify-content-between align-items-center my-3">
+        <div class="section-title">Sector Wise</div>
+        <div class="d-flex gap-2">
+          <input type="date" class="form-control filter-control" />
+          <select class="form-select filter-select">
+            <option disabled selected>
+              -- Select Commissionerate --
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="d-flex align-items-center mb-3">
+        <div class="date-col">Date: <b>1/1/26</b></div>
+        <div class="date-col">District: <b> Lahore</b></div>
+      </div>
+      <div id="container" class="chart-box"></div>
+    </div>
+  </div>
+</div>
