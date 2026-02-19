@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+    .navbar-expand .navbar-nav .dropdown-menu {
+        right: 0;
+    }
+}
