@@ -1,0 +1,247 @@
+<h2 class="page-title">Enforcement Officer Operations Form</h2>
+
+<!-- Assigned Area -->
+<div class="form-card">
+  <div class="section-title">Assigned Area</div>
+  <div class="row">
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Commissionerate</label>
+      <select class="form-select filter-select">
+        <option>-- Select Commissionerate --</option>
+      </select>
+    </div>
+
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Range</label>
+      <select class="form-select filter-select">
+        <option>-- Select Range --</option>
+      </select>
+    </div>
+
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Unit</label>
+      <select class="form-select filter-select">
+        <option>-- Select Unit --</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Registration Status -->
+<div class="form-card">
+  <div class="section-title">Registration Status</div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">PTN (Registered)</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">Unregistered</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Inspection Details -->
+<div class="form-card">
+  <div class="section-title">Inspection Details</div>
+  <div class="row">
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Date of Enforcement Operation</label>
+      <input type="date" class="form-control filter-control" />
+    </div>
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Business Name</label>
+      <input
+        type="text"
+        class="form-control filter-control"
+        placeholder="Enter Business Name"
+      />
+    </div>
+    <div class="col-md-4  mb-3">
+      <label class="filter-label">Sector</label>
+      <input
+        type="text"
+        class="form-control filter-control"
+        placeholder="Enter Sector"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Enforcement Action -->
+<div class="form-card">
+  <div class="section-title">Enforcement Action</div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">Record Impounded</label>
+      <input type="text" class="form-control filter-control" />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">Bank Account Attachment</label>
+      <input type="text" class="form-control filter-control" />
+    </div>
+  </div>
+</div>
+
+<!-- Tax Assessment -->
+<div class="form-card">
+  <div class="section-title">Tax Assessment Details</div>
+  <div class="row">
+    <div class="col-md-6 col-lg-3 mb-3">
+      <label class="filter-label">Tax Assessment</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+      <label class="filter-label">Tax Period of Assessment</label>
+      <input type="text" class="form-control filter-control" />
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+      <label class="filter-label">Penalty Imposed</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+    <div class="col-md-6 col-lg-3 mb-3">
+      <label class="filter-label">Default Surcharge</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Recovery -->
+<div class="form-card">
+  <div class="section-title">Recovery</div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">Actual Recovery Date</label>
+      <input type="date" class="form-control filter-control" />
+    </div>
+    <div class="col-md-6 mb-3">
+      <label class="filter-label">Actual Recovery Amount</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Violations -->
+<div class="form-card">
+  <div class="section-title">Violations & e-IMS</div>
+  <div class="row">
+    <div class="col-md-3">
+      <label class="filter-label">Violations Observed</label>
+      <input type="text" class="form-control filter-control" />
+    </div>
+    <div class="col-md-3">
+      <label class="filter-label">Penalties on e-IMS</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+    <div class="col-md-3">
+      <label class="filter-label">No. of e-IMS Violations</label>
+      <input
+        type="number"
+        class="form-control filter-control"
+        value="0"
+      />
+    </div>
+    <div class="col-md-3">
+      <label class="filter-label">e-IMS Installation Status</label>
+      <input type="text" class="form-control filter-control" />
+    </div>
+  </div>
+</div>
+
+<!-- Attachments -->
+<div class="form-card">
+  <div class="section-title">Attachments</div>
+  <label class="filter-label">Upload File</label>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="upload-card">
+        <button
+          type="button"
+          class="btn btn-sm select-btn btn-secondary text-muted"
+          id="select-picture"
+          (click)="selectFile()"
+        >
+          Select File
+        </button>
+
+        <div class="upload-left">
+          <span class="file-name text-muted" id="name-picture">
+            {{ fileName }}
+          </span>
+        </div>
+
+        <input type="file" id="file-picture" hidden (change)="onFileSelected($event)" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Actions -->
+<div
+  class="footer-actions d-flex flex-column flex-sm-row justify-content-between align-items-center"
+>
+  <!-- Left button -->
+  <button
+    class="btn btn-outline-success green-outline mb-2 mb-md-0"
+  >
+    Back
+  </button>
+
+  <!-- Right buttons -->
+  <div class="w-sm-100 w-md-auto">
+    <button class="btn btn-outline-custom me-sm-2 mb-2 mb-sm-0">
+      Collection Form
+    </button>
+    <button class="btn btn-primary submit-btn" (click)="onSubmit()">Submit</button>
+  </div>
+</div>
+
+<footer class="login-footer text-white mb-0 my-3">
+  <div
+    class="container d-flex flex-md-row justify-content-center align-items-center my-3"
+  >
+    <!-- Left Logo -->
+    <div
+      class="mb-2 mb-md-0 d-flex justify-content-center align-items-center mb-3"
+    >
+      <img
+        src="assets/images/pitb logo.png"
+        class="me-2"
+        alt="Logo 1"
+        height="40"
+      />
+      <div class="text-center text-muted small my-2">
+        &copy;2017 PRA Appeals. All rights reserved | Powered by PITB
+      </div>
+    </div>
+  </div>
+</footer>

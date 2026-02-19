@@ -29,12 +29,27 @@ export const routes: Routes = [
           import('./performance-listing/performance-listing.component').then(
             m => m.PerformanceListingComponent
           )
+      }
+      ,
+       {
+        path: 'performance-form',
+        loadComponent: () =>
+          import('./performance-form/performance-form.component').then(
+            m => m.PerformanceFormComponent
+          )
       },
        {
         path: 'search-user',
         loadComponent: () =>
           import('./search-user/search-user.component').then(
             m => m.SearchUserComponent  
+          )
+      },
+       {
+        path: 'update-user',
+        loadComponent: () =>
+          import('./update-user/update-user.component').then(
+            m => m.UpdateUserComponent  
           )
       },
       {
