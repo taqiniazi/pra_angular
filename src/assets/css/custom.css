@@ -64,7 +64,7 @@ body {
   background-color: transparent;
 }
 .page-wrapper.bg-light {
-  background: url(../images/Hero.png);
+  background: url(../images/hero.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

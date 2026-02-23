@@ -2,6 +2,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+// Interface for navigation items
+interface NavItem {
+  label: string;
+  link: string;
+  exact: boolean;
+}
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
@@ -13,7 +20,7 @@ export class SidebarComponent {
   @Input() open = false;
   @Output() closeSidebarEvent = new EventEmitter<void>();
 
-  navItems= [
+  navItems: NavItem[] = [
     { label: 'Dashboard', link: '/dashboard', exact: true },
     { label: 'Operation Form', link: '/operation-form', exact: true },
     { label: 'Performance Form', link: '/performance-form', exact: false },

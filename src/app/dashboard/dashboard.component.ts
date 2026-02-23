@@ -1,6 +1,13 @@
 import { Component, AfterViewInit } from '@angular/core';
-
 declare const Highcharts: any;
+
+// Interface for statistics card data
+interface StatsCard {
+  label: string;
+  icon: string;
+  statsNo: string;
+  class: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +17,7 @@ declare const Highcharts: any;
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  registration_status = [
+  registration_status: StatsCard[] = [
     {
       label: 'Registered',
       icon: './assets/images/icon1.png',
@@ -24,7 +31,7 @@ export class DashboardComponent {
       class:'bg-soft-red'
     }
   ]
-  enforcement_voaliations = [
+  enforcement_voaliations: StatsCard[] = [
     {
       label: 'Record Impound',
       icon: './assets/images/icon3.png',
@@ -44,7 +51,7 @@ export class DashboardComponent {
       class:'bg-soft-green'
     }
   ]
-  assesment_recovery = [
+  assesment_recovery: StatsCard[] = [
     {
       label: 'e-IMS Penalties',
       icon: './assets/images/icon6.png',

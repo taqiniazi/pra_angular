@@ -22,10 +22,10 @@ export class LoginComponent {
     this.router.navigate(['/dashboard']);
   }
 
-  refreshCaptcha(): void {
+  refreshCaptcha(): void {  
     // Generate random captcha
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let result = '';
+    const chars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let result: string = '';
     for (let i = 0; i < 6; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length)) + ' ';
     }

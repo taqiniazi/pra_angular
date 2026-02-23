@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   @Output() toggleSidebarEvent = new EventEmitter<void>();
-  isDropdownOpen = false;
+  isDropdownOpen: boolean = false;
 
   constructor(private router: Router) {}
 
@@ -21,7 +21,11 @@ export class HeaderComponent {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
 
-  closeDropdown(): void {
+/*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Closes the dropdown menu.
+   */
+/*******  8eccd0af-3546-4596-ad60-1df188412963  *******/  closeDropdown(): void {
     this.isDropdownOpen = false;
   }
 
